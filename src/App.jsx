@@ -8,7 +8,7 @@ import Profile from "./pages/Profile.jsx";
 import { useContext, useEffect, useState } from "react";
 import { Context } from "./contextApi/context.js";
 
-export const baseURL = "http://localhost:8800/api";
+export const baseURL = "https://studystatusserver.onrender.com/api";
 
 const App = () => {
 	const { user } = useContext(Context);
