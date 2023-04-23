@@ -1,31 +1,27 @@
-import styled from "styled-components";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { useContext } from "react";
 import { Context } from "../contextApi/context";
-import { baseURL } from "../App";
+import "react-toastify/dist/ReactToastify.css";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
+import { useContext } from "react";
+import { useState } from "react";
+import { baseURL } from "../App";
+import axios from "axios";
 
 const Container = styled.div`
-	box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-	-webkit-box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-
+	border: 1px solid silver;
 	width: 400px;
 	height: 500px;
-	background: rgba(248, 248, 255, 0.89);
-	border-radius: 15px;
+	background: white;
+	border-radius: 10px;
 	padding: 10px;
 	margin-top: 20px;
-
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	${mobile({ width: "90%", height: "70%", boxShadow: "none" })}
+	${mobile({ width: "90%", height: "70%", border: "none" })}
 `;
 
 const Wrapper = styled.div`
@@ -46,14 +42,14 @@ const Form = styled.form`
 	align-items: center;
 	justify-content: space-around;
 	flex-direction: column;
-	${mobile({ width: "90%" })}
+	${mobile({ width: "85%" })}
 `;
 
 const Input = styled.input`
 	padding: 10px;
-	width: 220px;
+	width: 100%;
 	border: none;
-	border-radius: 7px;
+	border-radius: 5px;
 	font-size: 15px;
 	background: white;
 	border: 1px solid silver;
@@ -65,8 +61,15 @@ const Btn = styled.button`
 	border-radius: 5px;
 	border: 1px solid silver;
 	color: white;
-	background-color: ${(props) => (props.isFetching ? "lightgray" : "purple")};
+	background-color: ${(props) =>
+		props.isFetching ? "lightgray" : "#703be7"};
 	cursor: ${(props) => (props.isFetching ? "not-allowed" : "pointer")};
+
+	&:hover {
+		background-color: ${(props) =>
+			props.isFetching ? "lightgray" : "purple"};
+		transition: all 0.5s ease;
+	}
 `;
 const Log = styled.span`
 	color: #dc3214;
@@ -122,8 +125,8 @@ const Login = () => {
 					/>
 					<div
 						style={{
-							width: "220px",
-							borderRadius: "7px",
+							width: "100%",
+							borderRadius: "5px",
 							border: "1px solid silver",
 							margin: "15px 0px",
 						}}>
@@ -132,7 +135,7 @@ const Login = () => {
 								width: "80%",
 								outline: "none",
 								border: "none",
-								borderRadius: "7px 0px 0px 7px",
+								borderRadius: "5px 0px 0px 5px",
 							}}
 							type={!passShow ? "password" : "text"}
 							onChange={(e) => setPassword(e.target.value)}

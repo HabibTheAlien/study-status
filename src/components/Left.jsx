@@ -10,11 +10,12 @@ import ProfilePic from "./ProfilePic";
 
 const Container = styled.div`
 	padding: 20px;
-	height: calc(100vh - 70px);
+	height: calc(100vh - 110px);
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	color: #292828;
 `;
 
 const Personal = styled.div`
@@ -22,16 +23,15 @@ const Personal = styled.div`
 	padding-bottom: 60px;
 	border-radius: 10px;
 	width: 45%;
-	height: 80%;
+	height: 70%;
 	position: absolute;
-	box-shadow: 3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-	-webkit-box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
+	border: 1px solid silver;
+
 	${mobile({
 		boxShadow: "none",
 		border: "1px solid silver ",
 		width: "100%",
-		height: "45%",
+		height: "48%",
 		position: "absolute",
 		top: "40px",
 		padding: "10px",
@@ -68,38 +68,40 @@ const Inputs = styled.input`
 	})}
 `;
 const UpdateBtn = styled.button`
-	margin: 20px 10px;
-	padding: 10px;
+	margin: 10px;
+	padding: 5px;
 	border: none;
 	border-radius: 5px;
-	font-size: 14px;
-	color: white;
+	font-size: 15px;
 	width: 70px;
-	background-color: ${(props) => (props.isFetching ? "lightgray" : "purple")};
+	background-color: ${(props) => (props.isFetching ? "lightgray" : "white")};
 	cursor: ${(props) => (props.isFetching ? "not-allowed" : "pointer")};
+	border: 0.1px solid silver;
 
 	${mobile({
 		margin: " 7px 5px",
 	})}
 	&:hover {
-		background: #fd5335;
+		color: white;
+		background: #703be7;
 		transition: all 0.5s ease;
 	}
 `;
 const EditBtn = styled.button`
-	margin: 20px 0px;
-	padding: 10px;
+	margin: 10px;
+	padding: 5px;
 	border: none;
 	border-radius: 5px;
-	font-size: 14px;
-	color: white;
-	background-color: purple;
+	font-size: 15px;
+	background-color: white;
 	cursor: pointer;
 	width: 50px;
+	border: 0.1px solid silver;
 	${mobile({})}
 
 	&:hover {
-		background: #fd5335;
+		color: white;
+		background: #703be7;
 		transition: all 0.5s ease;
 	}
 `;

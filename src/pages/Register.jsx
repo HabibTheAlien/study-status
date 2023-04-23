@@ -1,36 +1,29 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
+import avatar from "../assets/user.png";
 import styled from "styled-components";
-import avatar from "../assets/profile.png";
-import { baseURL } from "../App";
 import { mobile } from "../responsive";
+import { useState } from "react";
+import { baseURL } from "../App";
+import axios from "axios";
 
 const Container = styled.div`
-	box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-	-webkit-box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-
+	border: 1px solid silver;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-
 	width: 400px;
 	height: 500px;
 	background: white;
-
 	border-radius: 10px;
-	border: 2px solid white;
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	margin-top: 20px;
-	${mobile({ width: "90%", height: "70%", boxShadow: "none" })}
+	${mobile({ width: "90%", height: "70%", border: "none" })}
 `;
 const Form = styled.form`
 	display: flex;
@@ -38,6 +31,7 @@ const Form = styled.form`
 	justify-content: center;
 	flex-direction: column;
 	width: 65%;
+	${mobile({ width: "85%" })}
 `;
 
 const Title = styled.h2`
@@ -66,8 +60,7 @@ const Image = styled.img`
 const Inputs = styled.input`
 	padding: 10px;
 	width: 100%;
-
-	margin: 10px 0px;
+	margin: 5px 0px;
 	border: none;
 	border-radius: 5px;
 	font-size: 15px;
@@ -75,12 +68,13 @@ const Inputs = styled.input`
 `;
 const Input = styled.input`
 	padding: 10px;
-	margin: 5px 0px;
-	width: 220px;
 	border: none;
-	border-radius: 7px;
 	font-size: 15px;
-	background: white;
+	background: rgb(255, 255, 255);
+	width: 80%;
+	outline: "none";
+	border: "none";
+	border-radius: "5px 0px 0px 5px";
 `;
 const Btn = styled.button`
 	padding: 10px;
@@ -89,15 +83,17 @@ const Btn = styled.button`
 	border: none;
 	border-radius: 5px;
 	font-size: 14px;
-	background: #442fd1;
-	cursor: pointer;
 	color: white;
+	background-color: ${(props) => (props.isLoading ? "lightgray" : "#442fd1")};
+	cursor: ${(props) => (props.isLoading ? "not-allowed" : "pointer")};
 
 	&:hover {
-		background: #fd5335;
+		background-color: ${(props) =>
+			props.isLoading ? "lightgray" : "purple"};
 		transition: all 0.5s ease;
 	}
 `;
+
 const Login = styled.span`
 	color: #dc3214;
 	cursor: pointer;
@@ -116,21 +112,23 @@ const Register = () => {
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [isLoading, setIsLoading] = useState(false);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
+		setIsLoading(true);
 		const user = {
 			username,
 			email,
 			password,
 		};
-
 		try {
 			const res = await axios.post(`${baseURL}/auth/register`, user);
 			console.log(res);
 			toast.success("Registration successfull ");
 			toast.success("You can login now");
+			setIsLoading(false);
 		} catch (error) {
 			console.log(error.response.status);
 			if (error.response.status) {
@@ -140,7 +138,6 @@ const Register = () => {
 			}
 		}
 	};
-
 	return (
 		<Container>
 			<Title>Register</Title>
@@ -162,16 +159,12 @@ const Register = () => {
 				/>
 				<div
 					style={{
-						// width: "300px",
+						width: "100%",
 						borderRadius: "7px",
 						border: "1px solid silver",
+						margin: "5px 0px",
 					}}>
 					<Input
-						style={{
-							width: "80%",
-							outline: "none",
-							borderRadius: "7px 0px 0px 7px",
-						}}
 						type={!passShow ? "password" : "text"}
 						onChange={(e) => setPassword(e.target.value)}
 						required
@@ -192,7 +185,9 @@ const Register = () => {
 					</Show>
 				</div>
 
-				<Btn type="submit">Resister</Btn>
+				<Btn type="submit" isLoading={isLoading} disabled={isLoading}>
+					Resister
+				</Btn>
 			</Form>
 			<P>
 				Already Register?

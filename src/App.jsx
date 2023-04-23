@@ -5,10 +5,11 @@ import PageNotFound from "./pages/PageNotFound.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Profile from "./pages/Profile.jsx";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Context } from "./contextApi/context.js";
 
-export const baseURL = "https://studystatusserver.onrender.com/api";
+// export const baseURL = "https://studystatusserver.onrender.com/api";
+export const baseURL = "http://localhost:8800/api";
 
 const App = () => {
 	const { user } = useContext(Context);

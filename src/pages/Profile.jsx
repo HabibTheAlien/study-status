@@ -5,7 +5,7 @@ import Right from "../components/Right";
 
 const Container = styled.div`
 	padding: 20px;
-	height: calc(100vh - 70px);
+	height: calc(100vh - 120px);
 	width: 100%;
 	position: relative;
 	display: flex;
@@ -25,8 +25,8 @@ const Title = styled.h1`
 	text-align: center;
 	position: absolute;
 	top: 3%;
-	margin-bottom: 20px;
-	${mobile({ marginBottom: "3px", top: "1%", fontSize: "22px" })}
+	margin-bottom: 15px;
+	${mobile({ marginBottom: "1px", top: "2%", fontSize: "22px" })}
 `;
 
 const Profile = () => {

@@ -1,60 +1,49 @@
 import styled from "styled-components";
-import avtar from "../assets/profile.png";
+import avtar from "../assets/user.png";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-	width: 90%;
+	width: 250px;
+	height: 150px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 130px;
-	margin: 15px 30px;
-	padding: 20px;
-
+	margin: 10px;
+	padding: 10px;
 	border-radius: 10px;
-	border: 1px solid rgb(209, 209, 209);
 
-	box-shadow: 3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-	-webkit-box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
 	${mobile({
 		padding: "10px",
-		margin: "10px",
 		height: "100px",
+		weight: "100%",
 	})}
 `;
+const Left = styled.div``;
 const Avtar = styled.img`
 	cursor: pointer;
-	width: 90px;
-	height: 90px;
+	width: 70px;
+	height: 70px;
+	margin-right: 5px;
+	background-color: white;
 	object-fit: contain;
 	border-radius: 50%;
 	${mobile({ height: "60px", width: "60px" })}
 `;
-const Left = styled.div`
-	/* width: 10%; */
-	flex: 2;
-`;
-const Center = styled.div`
-	/* width: 80%; */
-	flex: 10;
-`;
-
+const Right = styled.div``;
 const Text = styled.p`
 	color: white;
-	font-size: 22px;
+	font-size: 18px;
 	text-align: center;
-	/* font-weight: 300; */
 	${mobile({ fontSize: "15px" })}
 `;
 
 const Name = styled.span`
-	color: white;
-	font-weight: bold;
+	font-weight: 600;
 `;
 const Status = ({ data }) => {
 	return (
-		<Container style={{ backgroundColor: data.status ? "green" : "red" }}>
+		<Container
+			style={{ backgroundColor: data.status ? "#1dbf73" : "#ff0000" }}>
 			<Left>
 				{data.profilePic ? (
 					<Avtar src={data.profilePic} alt="" />
@@ -62,7 +51,7 @@ const Status = ({ data }) => {
 					<Avtar src={avtar} alt="" />
 				)}
 			</Left>
-			<Center>
+			<Right>
 				{data.status ? (
 					<Text>
 						<Name>{data.username}&nbsp;</Name>
@@ -73,7 +62,7 @@ const Status = ({ data }) => {
 						<Name>{data.username}&nbsp;</Name> is not studing
 					</Text>
 				)}
-			</Center>
+			</Right>
 		</Container>
 	);
 };

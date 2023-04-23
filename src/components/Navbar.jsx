@@ -1,20 +1,22 @@
-import avtar from "../assets/profile.png";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
 import { Context } from "../contextApi/context";
+import { Link } from "react-router-dom";
+import avtar from "../assets/user.png";
+import styled from "styled-components";
 import { mobile } from "../responsive";
+import { useContext } from "react";
 
 const Container = styled.div`
 	z-index: 1000;
 	height: 70px;
-	background: crimson;
+	background: white;
+	border-bottom: 0.5px solid silver;
 	display: flex;
 	align-items: center;
+	color: #1d1d1d;
 	justify-content: space-between;
-	color: white;
 	padding: 5px 20px;
 	position: sticky;
+	top: 0;
 `;
 
 const Left = styled.div`
@@ -22,6 +24,7 @@ const Left = styled.div`
 `;
 const Logo = styled.h1`
 	font-size: 35px;
+	color: #703be7;
 	${mobile({ fontSize: "22px" })}
 `;
 const Right = styled.div`
@@ -32,45 +35,45 @@ const Right = styled.div`
 const Avtar = styled.img`
 	cursor: pointer;
 	width: 50px;
+	background-color: white;
 	height: 50px;
 	object-fit: cover;
 	border-radius: 50%;
-	${mobile({ width: "30px", height: "30px" })}
+
+	${mobile({ width: "40px", height: "40px" })}
 `;
 const Btn = styled.button`
 	cursor: pointer;
 	margin-left: 15px;
-	color: white;
-	background: teal;
+	background: inherit;
 	padding: 5px 10px;
+	color: #1d1d1d;
 	border: none;
 	border-radius: 5px;
 	font-size: 16px;
+	border: 0.1px solid silver;
 	${mobile({ fontSize: "12px", padding: "5px" })}
 `;
 const Name = styled.span`
 	cursor: pointer;
-	color: white;
+	color: #1d1d1d;
 	padding: 10px;
 	font-size: 18px;
 	${mobile({ display: "none" })}
 `;
-
 const Navbar = () => {
 	const { user, dispatch } = useContext(Context);
 	const handleLogout = () => {
 		dispatch({ type: "LOGOUT" });
 		window.location.replace("/");
 	};
-
 	return (
 		<Container>
 			<Left>
 				<Link className="link" to="/">
-					<Logo>Hexagon</Logo>
+					<Logo>STAT 16th</Logo>
 				</Link>
 			</Left>
-
 			<Right>
 				{user ? (
 					<>

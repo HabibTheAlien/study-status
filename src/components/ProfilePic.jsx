@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import userIcon from "../assets/profile.png";
+import userIcon from "../assets/user.png";
 import { useContext, useState } from "react";
 import { Context } from "../contextApi/context";
 import { ToastContainer, toast } from "react-toastify";
@@ -23,8 +23,8 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-	width: 70px;
-	height: 70px;
+	width: 80px;
+	height: 80px;
 	border-radius: 50%;
 	margin: 20px;
 	${mobile({
@@ -34,14 +34,14 @@ const Image = styled.img`
 	})}
 `;
 
-const SaveBtn = styled.button`
+const Btn = styled.button`
 	padding: 5px;
 	border: none;
-	color: white;
 	margin-left: 15px;
 	border-radius: 5px;
 	font-size: 15px;
-	background-color: ${(props) => (props.isLoading ? "lightgray" : "teal")};
+	border: 0.1px solid silver;
+	background-color: ${(props) => (props.isLoading ? "lightgray" : "white")};
 	cursor: ${(props) => (props.isLoading ? "not-allowed" : "pointer")};
 `;
 
@@ -88,6 +88,7 @@ const ProfilePic = () => {
 			);
 			dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
 			toast.success("Picture update successful,,,");
+			setFile(false);
 		} catch (err) {
 			toast.error("Pictur update failed,,,");
 			dispatch({ type: "UPDATE_FAILURE" });
@@ -115,16 +116,14 @@ const ProfilePic = () => {
 					{file ? (
 						<>
 							{picURL ? (
-								<SaveBtn onClick={handleDbPicURL}>
-									Confirm Save
-								</SaveBtn>
+								<Btn onClick={handleDbPicURL}>Confirm Save</Btn>
 							) : (
-								<SaveBtn
+								<Btn
 									isLoading={isLoading}
 									disabled={isLoading}
 									onClick={handlePic}>
 									Save
-								</SaveBtn>
+								</Btn>
 							)}
 						</>
 					) : (
@@ -133,9 +132,8 @@ const ProfilePic = () => {
 								style={{
 									cursor: "pointer",
 									padding: "5px",
-									color: "white",
-									backgroundColor: "teal",
 									marginLeft: "15px",
+									border: ".1px solid silver",
 									borderRadius: "5px",
 									fontSize: "15px",
 								}}>

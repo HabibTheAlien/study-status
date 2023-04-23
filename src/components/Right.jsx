@@ -18,7 +18,7 @@ const Container = styled.div`
 	${mobile({
 		width: "100%",
 		position: "absolute",
-		top: "43%",
+		top: "42%",
 		height: "55%",
 	})}
 `;
@@ -27,17 +27,17 @@ const Personal = styled.div`
 	padding-bottom: 60px;
 	border-radius: 10px;
 	width: 45%;
-	height: 80%;
+	height: 70%;
+	border: 1px solid silver;
+
 	position: absolute;
-	box-shadow: 3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-	-webkit-box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: -3px 7px 46px -14px rgba(0, 0, 0, 0.75);
+
 	${mobile({
 		boxShadow: "none",
 		border: "1px solid silver ",
 		width: "100%",
 		position: "absolute",
-		top: "70px",
+		top: "90px",
 	})}
 `;
 
@@ -66,31 +66,29 @@ const Span = styled.span`
 		margin: "5px 30px",
 	})}
 `;
-const SaveBtn = styled.button`
+const Btn = styled.button`
 	padding: 5px;
 	border: none;
-	color: white;
-	background-color: teal;
+	border: 0.1px solid silver;
 	margin-left: 15px;
 	border-radius: 5px;
 	font-size: 15px;
+	background: white;
 	cursor: pointer;
-
-	${mobile({
-		marginRight: "15px",
-	})}
 `;
 const I = styled.i`
-	margin-left: 50px;
-	color: blue;
+	margin-left: 20px;
+	color: #1dbf73;
 	font-size: 40px;
 	cursor: pointer;
 	${mobile({
-		position: "absolute",
-		top: "80%",
-		left: "80%",
-		marginLeft: "15px",
+		marginLeft: "1px",
 	})}
+`;
+const Bottom = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 `;
 
 const Right = () => {
@@ -121,19 +119,14 @@ const Right = () => {
 		<Container>
 			<ToastContainer style={{ fontSize: "16px" }} />
 			<Personal>
-				<Desc style={{ backgroundColor: status ? "green" : "red" }}>
+				<Desc style={{ backgroundColor: status ? "#1dbf73" : "red" }}>
 					{status ? (
 						<p>Your Study Status is activated</p>
 					) : (
 						<p>Your Study Status is deactivated now</p>
 					)}
 				</Desc>
-				<div
-					style={{
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
-					}}>
+				<Bottom>
 					{status ? (
 						<Span>Turn off Status</Span>
 					) : (
@@ -146,13 +139,16 @@ const Right = () => {
 						/>
 					) : (
 						<I
+							style={{
+								color: "gray",
+							}}
 							className="fas fa-toggle-off"
 							onClick={() => setStatus(!status)}
 						/>
 					)}
 
-					<SaveBtn onClick={handleStatus}> Save</SaveBtn>
-				</div>
+					<Btn onClick={handleStatus}> Save</Btn>
+				</Bottom>
 			</Personal>
 		</Container>
 	);
