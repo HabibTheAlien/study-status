@@ -8,7 +8,7 @@ import Profile from "./pages/Profile.jsx";
 import { useContext } from "react";
 import { Context } from "./contextApi/context.js";
 
-export const baseURL = "https://stat16th1.onrender.com/api";
+export const baseURL = "https://stat16thserver.netlify.app/api";
 // export const baseURL = "http://localhost:8800/api";
 
 const App = () => {
