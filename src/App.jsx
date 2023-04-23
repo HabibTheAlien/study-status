@@ -8,8 +8,8 @@ import Profile from "./pages/Profile.jsx";
 import { useContext } from "react";
 import { Context } from "./contextApi/context.js";
 
-// export const baseURL = "https://studystatusserver.onrender.com/api";
-export const baseURL = "http://localhost:8800/api";
+export const baseURL = "https://stat16th1.onrender.com/api";
+// export const baseURL = "http://localhost:8800/api";
 
 const App = () => {
 	const { user } = useContext(Context);
