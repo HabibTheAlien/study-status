@@ -9,7 +9,7 @@ const Container = styled.div`
 	z-index: 1000;
 	height: 70px;
 	background: white;
-	border-bottom: 0.5px solid silver;
+	border-bottom: 2px solid silver;
 	display: flex;
 	align-items: center;
 	color: #1d1d1d;
@@ -35,10 +35,10 @@ const Right = styled.div`
 const Avtar = styled.img`
 	cursor: pointer;
 	width: 50px;
-	background-color: white;
 	height: 50px;
-	object-fit: cover;
 	border-radius: 50%;
+	background-color: white;
+	object-fit: cover;
 
 	${mobile({ width: "40px", height: "40px" })}
 `;
@@ -51,8 +51,8 @@ const Btn = styled.button`
 	border: none;
 	border-radius: 5px;
 	font-size: 16px;
-	border: 0.1px solid silver;
-	${mobile({ fontSize: "12px", padding: "5px" })}
+	border: 1px solid silver;
+	${mobile({ padding: "5px" })}
 `;
 const Name = styled.span`
 	cursor: pointer;

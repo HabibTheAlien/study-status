@@ -10,30 +10,28 @@ import ProfilePic from "./ProfilePic";
 
 const Container = styled.div`
 	padding: 20px;
-	height: calc(100vh - 110px);
+	height: 410px;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #292828;
 `;
 
 const Personal = styled.div`
+	color: #292828;
+	border-radius: 10px;
+	border: 1px solid silver;
 	padding: 20px;
 	padding-bottom: 60px;
-	border-radius: 10px;
 	width: 45%;
-	height: 70%;
+	height: 100%;
 	position: absolute;
-	border: 1px solid silver;
 
 	${mobile({
 		boxShadow: "none",
-		border: "1px solid silver ",
 		width: "100%",
-		height: "48%",
-		position: "absolute",
-		top: "40px",
+		height: "72%",
+		top: "0",
 		padding: "10px",
 	})}
 `;
@@ -68,7 +66,7 @@ const Inputs = styled.input`
 	})}
 `;
 const UpdateBtn = styled.button`
-	margin: 10px;
+	margin-left: 10px;
 	padding: 5px;
 	border: none;
 	border-radius: 5px;
@@ -79,7 +77,7 @@ const UpdateBtn = styled.button`
 	border: 0.1px solid silver;
 
 	${mobile({
-		margin: " 7px 5px",
+		margin: " 5px ",
 	})}
 	&:hover {
 		color: white;
@@ -88,7 +86,7 @@ const UpdateBtn = styled.button`
 	}
 `;
 const EditBtn = styled.button`
-	margin: 10px;
+	margin-left: 10px;
 	padding: 5px;
 	border: none;
 	border-radius: 5px;
@@ -97,7 +95,9 @@ const EditBtn = styled.button`
 	cursor: pointer;
 	width: 50px;
 	border: 0.1px solid silver;
-	${mobile({})}
+	${mobile({
+		margin: " 5px 0px ",
+	})}
 
 	&:hover {
 		color: white;
@@ -169,12 +169,10 @@ const Left = () => {
 						</>
 					)}
 				</Form>
-
 				{!edit ? (
 					<EditBtn onClick={() => setEdit(!edit)}>Edit</EditBtn>
 				) : (
 					<UpdateBtn
-						type="submit"
 						onClick={handleSubmit}
 						isFetching={isFetching}
 						disabled={isFetching}>

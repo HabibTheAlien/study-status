@@ -42,6 +42,7 @@ const Form = styled.form`
 	align-items: center;
 	justify-content: space-around;
 	flex-direction: column;
+	width: 65%;
 	${mobile({ width: "85%" })}
 `;
 

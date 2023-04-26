@@ -5,7 +5,7 @@ import Right from "../components/Right";
 
 const Container = styled.div`
 	padding: 20px;
-	height: calc(100vh - 120px);
+	/* height: calc(100vh - 120px); */
 	width: 100%;
 	position: relative;
 	display: flex;
@@ -13,13 +13,13 @@ const Container = styled.div`
 	justify-content: center;
 `;
 const Wrapper = styled.div`
-	margin-top: 50px;
+	margin-top: 70px;
 	width: 100%;
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	${mobile({ display: "flex", flexDirection: "column" })}
+	${mobile({ display: "flex", flexDirection: "column", marginTop: "30px" })}
 `;
 const Title = styled.h1`
 	text-align: center;

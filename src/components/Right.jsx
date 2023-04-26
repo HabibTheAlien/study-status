@@ -10,7 +10,7 @@ import { mobile } from "../responsive";
 const Container = styled.div`
 	padding: 20px;
 	margin-top: 0;
-	height: calc(100vh - 70px);
+	height: 410px;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -18,7 +18,7 @@ const Container = styled.div`
 	${mobile({
 		width: "100%",
 		position: "absolute",
-		top: "42%",
+		top: "55%",
 		height: "55%",
 	})}
 `;
@@ -27,7 +27,7 @@ const Personal = styled.div`
 	padding-bottom: 60px;
 	border-radius: 10px;
 	width: 45%;
-	height: 70%;
+	height: 100%;
 	border: 1px solid silver;
 
 	position: absolute;
@@ -69,7 +69,7 @@ const Span = styled.span`
 const Btn = styled.button`
 	padding: 5px;
 	border: none;
-	border: 0.1px solid silver;
+	border: 1px solid silver;
 	margin-left: 15px;
 	border-radius: 5px;
 	font-size: 15px;
