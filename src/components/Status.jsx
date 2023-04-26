@@ -13,7 +13,6 @@ const Container = styled.div`
 	border-radius: 10px;
 
 	${mobile({
-		// padding: "10px",
 		height: "100px",
 		width: "365px",
 		margin: "7px",

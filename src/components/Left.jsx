@@ -9,6 +9,7 @@ import { mobile } from "../responsive";
 import ProfilePic from "./ProfilePic";
 
 const Container = styled.div`
+	z-index: 999;
 	padding: 20px;
 	height: 410px;
 	width: 100%;
@@ -101,7 +102,6 @@ const EditBtn = styled.button`
 	border: 1px solid silver;
 	${mobile({
 		margin: " 10px 0px ",
-		padding: "10px",
 	})}
 
 	&:hover {
