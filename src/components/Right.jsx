@@ -73,8 +73,8 @@ const Btn = styled.button`
 	margin-left: 15px;
 	border-radius: 5px;
 	font-size: 15px;
-	background: white;
-	cursor: pointer;
+	background-color: ${(props) => (props.isFetching ? "lightgray" : "white")};
+	cursor: ${(props) => (props.isFetching ? "not-allowed" : "pointer")};
 `;
 const I = styled.i`
 	margin-left: 20px;
@@ -92,7 +92,7 @@ const Bottom = styled.div`
 `;
 
 const Right = () => {
-	const { user, dispatch } = useContext(Context);
+	const { user, dispatch, isFetching } = useContext(Context);
 	const [status, setStatus] = useState(user.status);
 
 	const handleStatus = async () => {
@@ -147,7 +147,12 @@ const Right = () => {
 						/>
 					)}
 
-					<Btn onClick={handleStatus}> Save</Btn>
+					<Btn
+						onClick={handleStatus}
+						isFetching={isFetching}
+						disabled={isFetching}>
+						> Save
+					</Btn>
 				</Bottom>
 			</Personal>
 		</Container>
