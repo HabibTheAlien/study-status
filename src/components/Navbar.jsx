@@ -25,7 +25,7 @@ const Left = styled.div`
 const Logo = styled.h1`
 	font-size: 35px;
 	color: #703be7;
-	${mobile({ fontSize: "22px" })}
+	${mobile({ fontSize: "26px" })}
 `;
 const Right = styled.div`
 	display: flex;
