@@ -65,6 +65,10 @@ const Inputs = styled.input`
 	border-radius: 5px;
 	font-size: 15px;
 	border: 1px solid silver;
+	&:focus {
+		border: 2px solid #703be7;
+		transition: all 0.01s linear;
+	}
 `;
 const Input = styled.input`
 	padding: 10px;
@@ -74,7 +78,8 @@ const Input = styled.input`
 	width: 80%;
 	outline: "none";
 	border: "none";
-	border-radius: "5px 0px 0px 5px";
+	/* border-radius: "5px 0px 0px 5px"; */
+	border-radius: 5px;
 `;
 const Btn = styled.button`
 	padding: 10px;
@@ -105,6 +110,21 @@ const Show = styled.span`
 	border: none;
 	border-radius: 5px;
 	font-size: 15px;
+
+	padding: 11px 12px;
+	outline: none;
+	border-radius: 0px 7px 7px 0px;
+`;
+const Div = styled.div`
+	width: 100%;
+	border-radius: 7px;
+	border: 1px solid silver;
+	margin: 5px 0px;
+
+	&:focus {
+		border: 2px solid #703be7;
+		transition: all 0.01s linear;
+	}
 `;
 
 const Register = () => {
@@ -157,33 +177,21 @@ const Register = () => {
 					onChange={(e) => setEmail(e.target.value)}
 					required
 				/>
-				<div
-					style={{
-						width: "100%",
-						borderRadius: "7px",
-						border: "1px solid silver",
-						margin: "5px 0px",
-					}}>
+				<Div>
 					<Input
 						type={!passShow ? "password" : "text"}
 						onChange={(e) => setPassword(e.target.value)}
 						required
 						placeholder="Enter Your password"
 					/>
-					<Show
-						style={{
-							padding: "11px 12px",
-							outline: "none",
-							borderRadius: "0px 7px 7px 0px",
-						}}
-						onClick={() => setPassShow(!passShow)}>
+					<Show onClick={() => setPassShow(!passShow)}>
 						{!passShow ? (
 							<i className="fa fa-eye" aria-hidden="true" />
 						) : (
 							<i className="fa fa-eye-slash" aria-hidden="true" />
 						)}
 					</Show>
-				</div>
+				</Div>
 
 				<Btn type="submit" isLoading={isLoading} disabled={isLoading}>
 					Resister

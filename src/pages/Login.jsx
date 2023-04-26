@@ -47,6 +47,10 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
+	&:focus {
+		border: 2px solid #703be7;
+		transition: all 0.01s linear;
+	}
 	padding: 10px;
 	width: 100%;
 	border: none;
@@ -58,7 +62,7 @@ const Input = styled.input`
 const Btn = styled.button`
 	padding: 10px 0px;
 	margin: 5px 0px;
-	width: 120px;
+	width: 150px;
 	border-radius: 5px;
 	border: 1px solid silver;
 	color: white;

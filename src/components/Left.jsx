@@ -52,6 +52,10 @@ const Info = styled.div`
 	})}
 `;
 const Inputs = styled.input`
+	&:focus {
+		border: 2px solid #703be7;
+		transition: all 0.01s linear;
+	}
 	padding: 10px;
 	margin: 10px;
 	width: 65%;
@@ -71,7 +75,7 @@ const UpdateBtn = styled.button`
 	border: none;
 	border-radius: 5px;
 	font-size: 15px;
-	width: 70px;
+	width: 100px;
 	background-color: ${(props) => (props.isFetching ? "lightgray" : "white")};
 	cursor: ${(props) => (props.isFetching ? "not-allowed" : "pointer")};
 	border: 1px solid silver;
@@ -90,13 +94,14 @@ const EditBtn = styled.button`
 	padding: 5px;
 	border: none;
 	border-radius: 5px;
-	font-size: 15px;
+	font-size: 16px;
+	width: 100px;
 	background-color: white;
 	cursor: pointer;
-	width: 50px;
 	border: 1px solid silver;
 	${mobile({
-		margin: " 5px 0px ",
+		margin: " 10px 0px ",
+		padding: "10px",
 	})}
 
 	&:hover {
@@ -137,50 +142,54 @@ const Left = () => {
 	};
 
 	return (
-		<Container>
-			<ToastContainer style={{ fontSize: "16px" }} />
-			<Personal>
-				<Form>
-					<ProfilePic />
-					<Header>Personal Information</Header>
-					<hr />
+		<>
+			<Container>
+				<Personal>
+					<Form>
+						<ProfilePic />
+						<Header>Personal Information</Header>
+						<hr />
+						{!edit ? (
+							<>
+								<Info>
+									<b>Name : </b>
+									{username}
+								</Info>
+								<Info>
+									<b>E-mail : </b> {email}
+								</Info>
+							</>
+						) : (
+							<>
+								<Inputs
+									type="text"
+									onChange={(e) =>
+										setUsername(e.target.value)
+									}
+									value={username}
+								/>
+								<Inputs
+									type="email"
+									onChange={(e) => setEmail(e.target.value)}
+									value={email}
+								/>
+							</>
+						)}
+					</Form>
 					{!edit ? (
-						<>
-							<Info>
-								<b>Name : </b>
-								{username}
-							</Info>
-							<Info>
-								<b>E-mail : </b> {email}
-							</Info>
-						</>
+						<EditBtn onClick={() => setEdit(!edit)}>Edit</EditBtn>
 					) : (
-						<>
-							<Inputs
-								type="text"
-								onChange={(e) => setUsername(e.target.value)}
-								value={username}
-							/>
-							<Inputs
-								type="email"
-								onChange={(e) => setEmail(e.target.value)}
-								value={email}
-							/>
-						</>
+						<UpdateBtn
+							onClick={handleSubmit}
+							isFetching={isFetching}
+							disabled={isFetching}>
+							Update
+						</UpdateBtn>
 					)}
-				</Form>
-				{!edit ? (
-					<EditBtn onClick={() => setEdit(!edit)}>Edit</EditBtn>
-				) : (
-					<UpdateBtn
-						onClick={handleSubmit}
-						isFetching={isFetching}
-						disabled={isFetching}>
-						Update
-					</UpdateBtn>
-				)}
-			</Personal>
-		</Container>
+				</Personal>
+			</Container>
+			<ToastContainer style={{ fontSize: "16px" }} />
+		</>
 	);
 };
 

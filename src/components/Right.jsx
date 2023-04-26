@@ -123,7 +123,7 @@ const Right = () => {
 					{status ? (
 						<p>Your Study Status is activated</p>
 					) : (
-						<p>Your Study Status is deactivated now</p>
+						<p>Your Study Status is deactivated</p>
 					)}
 				</Desc>
 				<Bottom>

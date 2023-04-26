@@ -3,7 +3,7 @@ import avtar from "../assets/user.png";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-	width: 250px;
+	width: 260px;
 	height: 150px;
 	display: flex;
 	justify-content: space-between;
@@ -13,12 +13,15 @@ const Container = styled.div`
 	border-radius: 10px;
 
 	${mobile({
-		padding: "10px",
+		// padding: "10px",
 		height: "100px",
-		weight: "100%",
+		width: "365px",
+		margin: "7px",
 	})}
 `;
-const Left = styled.div``;
+const Left = styled.div`
+	flex: 4;
+`;
 const Avtar = styled.img`
 	cursor: pointer;
 	width: 70px;
@@ -29,12 +32,14 @@ const Avtar = styled.img`
 	border-radius: 50%;
 	${mobile({ height: "60px", width: "60px" })}
 `;
-const Right = styled.div``;
+const Right = styled.div`
+	flex: 8;
+`;
 const Text = styled.p`
+	text-align: center;
 	color: white;
 	font-size: 18px;
-	text-align: center;
-	${mobile({ fontSize: "15px" })}
+	${mobile({ fontSize: "15px", textAlign: "left" })}
 `;
 
 const Name = styled.span`

@@ -3,6 +3,7 @@ import Status from "../components/Status";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { baseURL } from "../App";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
 	display: flex;
@@ -10,6 +11,10 @@ const Container = styled.div`
 	justify-content: center;
 	flex-wrap: wrap;
 	padding: 20px;
+
+	${mobile({
+		flexDirection: "column",
+	})}
 `;
 
 const Home = () => {
