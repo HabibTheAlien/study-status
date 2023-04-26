@@ -133,7 +133,7 @@ const ProfilePic = () => {
 									cursor: "pointer",
 									padding: "5px",
 									marginLeft: "15px",
-									border: ".1px solid silver",
+									border: "1px solid silver",
 									borderRadius: "5px",
 									fontSize: "15px",
 								}}>
