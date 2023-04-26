@@ -151,7 +151,7 @@ const Right = () => {
 						onClick={handleStatus}
 						isFetching={isFetching}
 						disabled={isFetching}>
-						> Save
+						Save
 					</Btn>
 				</Bottom>
 			</Personal>
