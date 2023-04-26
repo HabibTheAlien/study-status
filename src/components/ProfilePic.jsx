@@ -40,7 +40,7 @@ const Btn = styled.button`
 	margin-left: 15px;
 	border-radius: 5px;
 	font-size: 15px;
-	border: 0.1px solid silver;
+	border: 1px solid silver;
 	background-color: ${(props) => (props.isLoading ? "lightgray" : "white")};
 	cursor: ${(props) => (props.isLoading ? "not-allowed" : "pointer")};
 `;
