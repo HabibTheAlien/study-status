@@ -74,7 +74,7 @@ const UpdateBtn = styled.button`
 	width: 70px;
 	background-color: ${(props) => (props.isFetching ? "lightgray" : "white")};
 	cursor: ${(props) => (props.isFetching ? "not-allowed" : "pointer")};
-	border: 0.1px solid silver;
+	border: 1px solid silver;
 
 	${mobile({
 		margin: " 5px ",
@@ -94,7 +94,7 @@ const EditBtn = styled.button`
 	background-color: white;
 	cursor: pointer;
 	width: 50px;
-	border: 0.1px solid silver;
+	border: 1px solid silver;
 	${mobile({
 		margin: " 5px 0px ",
 	})}
