@@ -71,7 +71,7 @@ const Navbar = () => {
 		<Container>
 			<Left>
 				<Link className="link" to="/">
-					<Logo>STAT 16th</Logo>
+					<Logo>Sweet 16th</Logo>
 				</Link>
 			</Left>
 			<Right>

@@ -35,7 +35,7 @@ const Image = styled.img`
 `;
 
 const Btn = styled.button`
-	padding: 5px;
+	padding: 10px;
 	border: none;
 	margin-left: 15px;
 	border-radius: 5px;
@@ -131,7 +131,7 @@ const ProfilePic = () => {
 							<span
 								style={{
 									cursor: "pointer",
-									padding: "5px",
+									padding: "7px",
 									marginLeft: "15px",
 									border: "1px solid silver",
 									borderRadius: "5px",
