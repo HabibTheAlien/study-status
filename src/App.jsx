@@ -7,6 +7,7 @@ import Register from "./pages/Register.jsx";
 import Profile from "./pages/Profile.jsx";
 import { useContext } from "react";
 import { Context } from "./contextApi/context.js";
+import ProgressBar from "./components/ProgressBar.jsx";
 
 export const baseURL = "https://m32.onrender.com/api";
 // export const baseURL = "http://localhost:8800/api";
@@ -29,6 +30,7 @@ const App = () => {
 						element={user ? <Navigate to="/" /> : <Register />}
 					/>
 					<Route path="/profile" element={<Profile />} />
+					<Route path="/test" element={<ProgressBar />} />
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
 			</BrowserRouter>

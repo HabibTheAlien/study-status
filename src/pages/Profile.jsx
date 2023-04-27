@@ -5,7 +5,6 @@ import Right from "../components/Right";
 
 const Container = styled.div`
 	padding: 20px;
-	/* height: calc(100vh - 120px); */
 	width: 100%;
 	position: relative;
 	display: flex;
