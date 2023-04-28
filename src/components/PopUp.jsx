@@ -48,7 +48,6 @@ const Btn = styled.button`
 	border-radius: 5px;
 `;
 const PopUp = ({ setDel }) => {
-	// const dele = true;
 	const { user } = useContext(Context);
 
 	const hendleDelete = async (e) => {
