@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import axios from "axios";
+import { baseURL } from "../App";
 import styled from "styled-components";
+import { ToastContainer, toast } from "react-toastify";
+import { Context } from "../contextApi/context";
 const Container = styled.div`
 	z-index: 10000;
 	background: black;
@@ -13,7 +17,7 @@ const Wrapper = styled.div`
 	z-index: 10001;
 	background-color: white;
 	width: 320px;
-	height: 170px;
+	height: 150px;
 	border-radius: 10px;
 	color: black;
 	position: absolute;
@@ -37,34 +41,41 @@ const Btn = styled.button`
 	width: 120px;
 	background: none;
 	font-weight: bold;
-	background: ${({ del }) => (del ? "#703be7" : "#d6d6d6")};
-	color: ${({ del }) => (del ? "white" : "black")};
-	margin-left: ${({ del }) => (del ? "15px" : "16px")};
+	background: ${({ dele }) => (dele ? "#703be7" : "#d6d6d6")};
+	color: ${({ dele }) => (dele ? "white" : "black")};
+	margin-left: ${({ dele }) => (dele ? "15px" : "16px")};
 	border: none;
 	border-radius: 5px;
 `;
-const PopUp = () => {
-	const [del, setDel] = useState("");
-	const [can, setCan] = useState("");
-	console.log(del);
-	console.log(can);
-	const hendleCancel = () => {
-		setCan("Hello from cancle");
-	};
-	const hendleDelete = () => {
-		setDel("Hello from delete");
+const PopUp = ({ setDel }) => {
+	// const dele = true;
+	const { user } = useContext(Context);
+
+	const hendleDelete = async (e) => {
+		e.preventDefault();
+
+		try {
+			const res = await axios.delete(`${baseURL}/users/${user._id}`, {
+				headers: { token: `Bearer ${user.accessToken}` },
+			});
+			res && localStorage.setItem("user", null);
+			res && window.location.replace("/");
+		} catch {
+			toast.error("Something went wrong,,,");
+		}
 	};
 	return (
 		<>
-			<Container></Container>
+			<ToastContainer style={{ fontSize: "16px" }} />
+
+			<Container />
 			<Wrapper>
-				<Header>Delete this entire conversation?</Header>
+				<Header>Delete your account?</Header>
 				<Text>
-					Once you have delete your copy of the conversation it can't
-					be undone
+					Once you have delete your account it can't be undone
 				</Text>
-				<Btn onClick={hendleCancel}>Cancel</Btn>
-				<Btn del onClick={hendleDelete}>
+				<Btn onClick={() => setDel(false)}>Cancel</Btn>
+				<Btn dele onClick={hendleDelete}>
 					Delete
 				</Btn>
 			</Wrapper>

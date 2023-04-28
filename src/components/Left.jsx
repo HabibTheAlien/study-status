@@ -2,12 +2,11 @@ import styled from "styled-components";
 import { useContext, useState } from "react";
 import { Context } from "../contextApi/context";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
 import { baseURL } from "../App";
 import { mobile } from "../responsive";
 import ProfilePic from "./ProfilePic";
-
 const Container = styled.div`
 	z-index: 999;
 	padding: 20px;
