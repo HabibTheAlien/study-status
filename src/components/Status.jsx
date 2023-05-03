@@ -3,8 +3,8 @@ import avtar from "../assets/user.png";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-	width: 260px;
-	height: 150px;
+	width: 90%;
+	height: 130px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -12,11 +12,11 @@ const Container = styled.div`
 	padding: 10px;
 	border-radius: 10px;
 
-	${mobile({
+	/* ${mobile({
 		height: "100px",
 		width: "90%",
 		margin: "7px",
-	})}
+	})} */
 `;
 const Left = styled.div`
 	flex: 4;
