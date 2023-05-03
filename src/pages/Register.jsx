@@ -23,7 +23,7 @@ const Container = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	margin-top: 20px;
-	${mobile({ width: "90%", height: "70%", border: "none" })}
+	/* ${mobile({ width: "90%", height: "70%", border: "none" })} */
 `;
 const Form = styled.form`
 	display: flex;

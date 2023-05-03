@@ -14,7 +14,7 @@ const Container = styled.div`
 
 	${mobile({
 		height: "100px",
-		width: "365px",
+		width: "90%",
 		margin: "7px",
 	})}
 `;
