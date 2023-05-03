@@ -23,9 +23,9 @@ const Left = styled.div`
 	cursor: pointer;
 `;
 const Logo = styled.h1`
-	font-size: 35px;
+	font-size: 2.4rem;
 	color: #703be7;
-	${mobile({ fontSize: "26px" })}
+	${mobile({ fontSize: "2rem" })}
 `;
 const Right = styled.div`
 	display: flex;
@@ -44,7 +44,6 @@ const Avtar = styled.img`
 `;
 const Btn = styled.button`
 	cursor: pointer;
-	margin-left: 15px;
 	background: inherit;
 	padding: 5px 10px;
 	color: #1d1d1d;

@@ -43,11 +43,11 @@ const Btn = styled.button`
 	font-weight: bold;
 	background: ${({ dele }) => (dele ? "#703be7" : "#d6d6d6")};
 	color: ${({ dele }) => (dele ? "white" : "black")};
-	margin-left: ${({ dele }) => (dele ? "15px" : "16px")};
+	margin-left: ${({ dele }) => (dele ? "15px" : "18px")};
 	border: none;
 	border-radius: 5px;
 `;
-const PopUp = ({ setDel }) => {
+const DeletePopup = ({ setDel }) => {
 	const { user } = useContext(Context);
 
 	const hendleDelete = async (e) => {
@@ -82,4 +82,4 @@ const PopUp = ({ setDel }) => {
 	);
 };
 
-export default PopUp;
+export default DeletePopup;

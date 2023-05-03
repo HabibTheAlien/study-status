@@ -4,10 +4,11 @@ import Home from "./pages/Home.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
-import Profile from "./pages/Profile.jsx";
 import { useContext } from "react";
 import { Context } from "./contextApi/context.js";
-import ProgressBar from "./components/ProgressBar.jsx";
+import ProfilePage from "./pages/profiePage/ProfilePage.jsx";
+import ProfilePageEdit from "./pages/profilePageEdit/ProfilePageEdit.jsx";
+import Settings from "./pages/settings/Settings.jsx";
 
 export const baseURL = "https://m32.onrender.com/api";
 // export const baseURL = "http://localhost:8800/api";
@@ -29,8 +30,10 @@ const App = () => {
 						path="/register"
 						element={user ? <Navigate to="/" /> : <Register />}
 					/>
-					<Route path="/profile" element={<Profile />} />
-					<Route path="/test" element={<ProgressBar />} />
+					<Route path="/profile" element={<ProfilePage />} />
+					{/* <Route path="/test" element={< />} /> */}
+					<Route path="/edit" element={<ProfilePageEdit />} />
+					<Route path="/settings" element={<Settings />} />
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
 			</BrowserRouter>

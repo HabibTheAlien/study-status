@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
-import Left from "../components/Left";
+import Left from "./Left";
 import Right from "../components/Right";
 import PopUp from "../components/PopUp";
 import { useState } from "react";

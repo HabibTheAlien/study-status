@@ -1,0 +1,100 @@
+.profilePage {
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+.profilePageWrapper {
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.profilePageHeader {
+	text-align: center;
+	font-size: 25px;
+}
+
+.profilePageTop {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: cente;
+	border-bottom: 1px solid silver;
+	padding: 10px 0px;
+}
+
+.profilePageImg img {
+	height: 110px;
+	width: 110px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.profilePageDetails {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-left: 20px;
+}
+
+.profilePageDetails p {
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.profilePageDetails span {
+	color: rgb(177, 173, 173);
+	font-size: 13px;
+	margin: 5px 0px;
+	font-style: italic;
+}
+.profilePageDetails button {
+	margin: 7px 0px;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 15px;
+	width: 150px;
+	border: none;
+	border-radius: 7px;
+	background: #d6d6d6;
+	font-weight: bold;
+}
+
+.profilePageBottom {
+	width: 100%;
+}
+.profilePageBottomStatus,
+.profilePageBottomSettings {
+	border-bottom: 1px solid silver;
+	padding: 10px;
+	width: 100%;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.profilePageBottomSettings {
+	cursor: pointer;
+}
+.profilePageBottomStatus span {
+	color: white;
+	background: #1dbf73;
+	padding: 7px;
+	border-radius: 3px;
+	width: 60px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.profilePageBottomSettings {
+	padding: 15px;
+	cursor: pointer;
+}
