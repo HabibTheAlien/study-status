@@ -9,7 +9,7 @@ import { baseURL } from "../App";
 import axios from "axios";
 
 const Container = styled.div`
-	border: 1px solid silver;
+	/* border: 1px solid silver; */
 	position: absolute;
 	top: 50%;
 	left: 50%;

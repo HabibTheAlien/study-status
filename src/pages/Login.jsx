@@ -10,7 +10,7 @@ import { baseURL } from "../App";
 import axios from "axios";
 
 const Container = styled.div`
-	border: 1px solid silver;
+	/* border: 1px solid silver; */
 	width: 400px;
 	height: 500px;
 	background: white;
@@ -21,7 +21,7 @@ const Container = styled.div`
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	${mobile({ width: "90%", height: "70%", border: "none" })}
+	/* ${mobile({ width: "90%", height: "70%", border: "none" })} */
 `;
 
 const Wrapper = styled.div`

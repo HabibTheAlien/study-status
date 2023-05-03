@@ -23,7 +23,7 @@ const Left = styled.div`
 	cursor: pointer;
 `;
 const Logo = styled.h1`
-	font-size: 2.4rem;
+	font-size: 28px;
 	color: #703be7;
 	${mobile({ fontSize: "2rem" })}
 `;
@@ -39,6 +39,7 @@ const Avtar = styled.img`
 	border-radius: 50%;
 	background-color: white;
 	object-fit: cover;
+	margin-right: 15px;
 
 	${mobile({ width: "45px", height: "45px" })}
 `;
@@ -83,9 +84,9 @@ const Navbar = () => {
 								<Avtar src={avtar} alt="" />
 							)}
 						</Link>
-						<Link className="link" to="/profile">
+						{/* <Link className="link" to="/profile">
 							<Name>{user.username}</Name>
-						</Link>
+						</Link> */}
 						<Btn onClick={handleLogout}>Logout</Btn>
 					</>
 				) : (
