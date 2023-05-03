@@ -9,7 +9,8 @@ const Container = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
+	flex-direction: column;
 	padding: 20px;
 
 	${mobile({
