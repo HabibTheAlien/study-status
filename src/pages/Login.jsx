@@ -47,22 +47,34 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
+	padding: 10px;
+	border: none;
+	font-size: 15px;
+	background: rgb(255, 255, 255);
+	width: 80%;
+	outline: "none";
+	border: "none";
+	/* border-radius: "5px 0px 0px 5px"; */
+	border-radius: 5px;
+`;
+
+const Inputs = styled.input`
+	padding: 10px;
+	width: 100%;
+	margin: 5px 0px;
+	border: none;
+	border-radius: 5px;
+	font-size: 15px;
+	border: 1px solid silver;
 	&:focus {
 		border: 2px solid #703be7;
 		transition: all 0.01s linear;
 	}
-	padding: 10px;
-	width: 100%;
-	border: none;
-	border-radius: 5px;
-	font-size: 15px;
-	background: white;
-	border: 1px solid silver;
 `;
 const Btn = styled.button`
 	padding: 10px 0px;
-	margin: 5px 0px;
-	width: 150px;
+	margin: 15px 0px;
+	width: 100%;
 	border-radius: 5px;
 	border: 1px solid silver;
 	color: white;
@@ -93,7 +105,17 @@ const Show = styled.span`
 	padding: 9px;
 	font-size: 15px;
 `;
+const Div = styled.div`
+	width: 100%;
+	border-radius: 7px;
+	border: 1px solid silver;
+	margin: 5px 0px;
 
+	&:focus {
+		border: 2px solid #703be7;
+		transition: all 0.01s linear;
+	}
+`;
 const Login = () => {
 	const [passShow, setPassShow] = useState(false);
 	const [email, setEmail] = useState("");
@@ -122,38 +144,20 @@ const Login = () => {
 			<Wrapper>
 				<ToastContainer style={{ fontSize: "16px" }} />
 				<Form onSubmit={handleSubmit}>
-					<Input
+					<Inputs
 						type="email"
 						placeholder="Email"
 						onChange={(e) => setEmail(e.target.value)}
 						required
 					/>
-					<div
-						style={{
-							width: "100%",
-							borderRadius: "5px",
-							border: "1px solid silver",
-							margin: "15px 0px",
-						}}>
+					<Div>
 						<Input
-							style={{
-								width: "80%",
-								outline: "none",
-								border: "none",
-								borderRadius: "5px 0px 0px 5px",
-							}}
 							type={!passShow ? "password" : "text"}
 							onChange={(e) => setPassword(e.target.value)}
 							required
 							placeholder="Enter Your password"
 						/>
-						<Show
-							style={{
-								padding: "11px 12px",
-								outline: "none",
-								borderRadius: "0px 7px 7px 0px",
-							}}
-							onClick={() => setPassShow(!passShow)}>
+						<Show onClick={() => setPassShow(!passShow)}>
 							{!passShow ? (
 								<i className="fa fa-eye" aria-hidden="true" />
 							) : (
@@ -163,7 +167,7 @@ const Login = () => {
 								/>
 							)}
 						</Show>
-					</div>
+					</Div>
 
 					<Btn
 						type="submit"
