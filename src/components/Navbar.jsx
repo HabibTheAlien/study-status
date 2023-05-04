@@ -54,13 +54,7 @@ const Btn = styled.button`
 	border: 1px solid silver;
 	${mobile({ padding: "5px" })}
 `;
-const Name = styled.span`
-	cursor: pointer;
-	color: #1d1d1d;
-	padding: 10px;
-	font-size: 18px;
-	${mobile({ display: "none" })}
-`;
+
 const Navbar = () => {
 	const { user, dispatch } = useContext(Context);
 	const handleLogout = () => {
