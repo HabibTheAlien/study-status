@@ -3,7 +3,7 @@ import avtar from "../assets/user.png";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-	width: 90%;
+	width: 93%;
 	height: 130px;
 	display: flex;
 	justify-content: space-between;
