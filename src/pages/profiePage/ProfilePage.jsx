@@ -34,7 +34,7 @@ const ProfilePage = () => {
 
 				<div className="profilePageBottom">
 					<div className="profilePageBottomStatus">
-						<p>Study Status</p>
+						<p>Your Study Status is now</p>
 						{user.status ? (
 							<span>ON</span>
 						) : (

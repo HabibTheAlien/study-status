@@ -54,6 +54,13 @@ const Btn = styled.button`
 	border: 1px solid silver;
 	${mobile({ padding: "5px" })}
 `;
+// const Name = styled.span`
+// 	cursor: pointer;
+// 	background: inherit;
+// 	padding: 5px;
+// 	font-size: 16px;
+// 	font-weight: 500;
+// `;
 
 const Navbar = () => {
 	const { user, dispatch } = useContext(Context);
@@ -78,9 +85,9 @@ const Navbar = () => {
 								<Avtar src={avtar} alt="" />
 							)}
 						</Link>
-						{/* <Link className="link" to="/profile">
-							<Name>{user.username}</Name>
-						</Link> */}
+						<Link className="link" to="/profile">
+							{/* <Name>{user.username}</Name> */}
+						</Link>
 						<Btn onClick={handleLogout}>Logout</Btn>
 					</>
 				) : (

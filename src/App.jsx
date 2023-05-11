@@ -9,6 +9,7 @@ import { Context } from "./contextApi/context.js";
 import ProfilePage from "./pages/profiePage/ProfilePage.jsx";
 import ProfilePageEdit from "./pages/profilePageEdit/ProfilePageEdit.jsx";
 import Settings from "./pages/settings/Settings.jsx";
+import SingleUser from "./components/singelUser/SingleUser.jsx";
 
 export const baseURL = "https://m32.onrender.com/api";
 // export const baseURL = "http://localhost:8800/api";
@@ -30,6 +31,7 @@ const App = () => {
 						path="/register"
 						element={user ? <Navigate to="/" /> : <Register />}
 					/>
+					<Route path="/single/:id" element={<SingleUser />} />
 					<Route path="/profile" element={<ProfilePage />} />
 					{/* <Route path="/test" element={< />} /> */}
 					<Route path="/edit" element={<ProfilePageEdit />} />

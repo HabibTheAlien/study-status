@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import avtar from "../assets/user.png";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-	width: 93%;
+	width: 95%;
 	height: 130px;
 	display: flex;
 	justify-content: space-between;
@@ -11,6 +12,7 @@ const Container = styled.div`
 	margin: 10px;
 	padding: 10px;
 	border-radius: 10px;
+	cursor: pointer;
 
 	/* ${mobile({
 		height: "100px",
@@ -44,30 +46,34 @@ const Text = styled.p`
 const Name = styled.span`
 	font-weight: 600;
 `;
-const Status = ({ data }) => {
+const Status = ({ data, id }) => {
 	return (
-		<Container
-			style={{ backgroundColor: data.status ? "#1dbf73" : "#ff0000" }}>
-			<Left>
-				{data.profilePic ? (
-					<Avtar src={data.profilePic} alt="" />
-				) : (
-					<Avtar src={avtar} alt="" />
-				)}
-			</Left>
-			<Right>
-				{data.status ? (
-					<Text>
-						<Name>{data.username}&nbsp;</Name>
-						is now studing
-					</Text>
-				) : (
-					<Text>
-						<Name>{data.username}&nbsp;</Name> is not studing
-					</Text>
-				)}
-			</Right>
-		</Container>
+		<Link to={`/single/${id}`} className="link">
+			<Container
+				style={{
+					backgroundColor: data.status ? "#1dbf73" : "#ff0000",
+				}}>
+				<Left>
+					{data.profilePic ? (
+						<Avtar src={data.profilePic} alt="" />
+					) : (
+						<Avtar src={avtar} alt="" />
+					)}
+				</Left>
+				<Right>
+					{data.status ? (
+						<Text>
+							<Name>{data.username}&nbsp;</Name>
+							is now studing
+						</Text>
+					) : (
+						<Text>
+							<Name>{data.username}&nbsp;</Name> is not studing
+						</Text>
+					)}
+				</Right>
+			</Container>
+		</Link>
 	);
 };
 

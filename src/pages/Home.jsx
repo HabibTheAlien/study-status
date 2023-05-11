@@ -31,10 +31,11 @@ const Home = () => {
 		};
 		getData();
 	}, []);
+
 	return (
 		<Container>
 			{data.map((item) => (
-				<Status data={item} key={Math.random() * 12} />
+				<Status data={item} key={item._id} id={item._id} />
 			))}
 		</Container>
 	);
