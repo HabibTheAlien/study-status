@@ -23,9 +23,9 @@ const Left = styled.div`
 	cursor: pointer;
 `;
 const Logo = styled.h1`
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	color: #703be7;
-	// ${mobile({ fontSize: "rem" })}
+	/* // ${mobile({ fontSize: "rem" })} */
 `;
 const Center = styled.div`
 	display: flex;
@@ -44,7 +44,7 @@ const Avtar = styled.img`
 	border-radius: 50%;
 	background-color: white;
 	object-fit: cover;
-	margin-right: 10px;
+	margin-right: 5px;
 
 	${mobile({ width: "45px", height: "45px" })}
 `;
