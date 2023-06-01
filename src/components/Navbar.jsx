@@ -23,9 +23,14 @@ const Left = styled.div`
 	cursor: pointer;
 `;
 const Logo = styled.h1`
-	font-size: 28px;
+	font-size: 1.6rem;
 	color: #703be7;
-	${mobile({ fontSize: "2rem" })}
+	// ${mobile({ fontSize: "rem" })}
+`;
+const Center = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;
 const Right = styled.div`
 	display: flex;
@@ -39,9 +44,20 @@ const Avtar = styled.img`
 	border-radius: 50%;
 	background-color: white;
 	object-fit: cover;
-	margin-right: 15px;
+	margin-right: 10px;
 
 	${mobile({ width: "45px", height: "45px" })}
+`;
+const Items = styled.span`
+	cursor: pointer;
+	padding: 5px 10px;
+	color: #1d1d1d;
+	font-size: 16px;
+	font-weight: 500;
+	${mobile({ padding: "5px" })}
+	&:hover {
+		color: blue;
+	}
 `;
 const Btn = styled.button`
 	cursor: pointer;
@@ -54,20 +70,10 @@ const Btn = styled.button`
 	border: 1px solid silver;
 	${mobile({ padding: "5px" })}
 `;
-// const Name = styled.span`
-// 	cursor: pointer;
-// 	background: inherit;
-// 	padding: 5px;
-// 	font-size: 16px;
-// 	font-weight: 500;
-// `;
 
 const Navbar = () => {
-	const { user, dispatch } = useContext(Context);
-	const handleLogout = () => {
-		dispatch({ type: "LOGOUT" });
-		window.location.replace("/");
-	};
+	const { user } = useContext(Context);
+
 	return (
 		<Container>
 			<Left>
@@ -75,6 +81,17 @@ const Navbar = () => {
 					<Logo>Sweet 16th</Logo>
 				</Link>
 			</Left>
+			<Center>
+				<Link className="link" to="/">
+					<Items>Home</Items>
+				</Link>
+				<Link className="link" to="/friends">
+					<Items>Friends</Items>
+				</Link>
+				<Link className="link" to="/write">
+					<Items> Write</Items>
+				</Link>
+			</Center>
 			<Right>
 				{user ? (
 					<>
@@ -88,7 +105,7 @@ const Navbar = () => {
 						<Link className="link" to="/profile">
 							{/* <Name>{user.username}</Name> */}
 						</Link>
-						<Btn onClick={handleLogout}>Logout</Btn>
+						{/* <Btn onClick={handleLogout}>Logout</Btn> */}
 					</>
 				) : (
 					<Link className="link" to="/login">

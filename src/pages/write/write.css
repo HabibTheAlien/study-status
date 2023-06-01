@@ -1,0 +1,84 @@
+.write {
+	padding-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.writeImg {
+	width: 90%;
+	height: 250px;
+	border-radius: 10px;
+	object-fit: cover;
+}
+
+.writeForm {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.writeFormGroup {
+	width: 90%;
+}
+
+.writeIconDiv {
+	margin: 7px 0px;
+	cursor: pointer;
+	padding: 7px;
+	font-size: 15px;
+	border: none;
+	border-radius: 7px;
+	background: white;
+	border: 1px solid silver;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 120px;
+}
+.writeIcon {
+	font-size: 20px;
+	margin-right: 5px;
+}
+
+.writeInput {
+	font-size: 20px;
+	width: 100%;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid silver;
+	margin: 7px 0px;
+}
+
+.writeInput:focus {
+	border: 2px solid #703be7;
+	transition: all 0.01s linear;
+}
+
+.writeText {
+	font-size: 16px;
+	resize: none;
+	height: 25vh;
+}
+
+.writeSubmit {
+	color: white;
+	background: #703be7;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 15px;
+	margin-bottom: 40px;
+}
+.fa-spinner {
+	caret-color: transparent;
+	font-size: 2rem;
+	margin: 15px 0px;
+	border: none;
+}

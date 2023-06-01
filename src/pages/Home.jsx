@@ -1,44 +1,36 @@
-import styled from "styled-components";
-import Status from "../components/Status";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
 import { baseURL } from "../App";
-import { mobile } from "../responsive";
+import Post from "../components/post/Post";
 
 const Container = styled.div`
 	display: flex;
-	align-items: center;
+	flex-wrap: wrap;
 	justify-content: center;
-	/* flex-wrap: wrap; */
-	flex-direction: column;
-	padding: 20px;
-
-	${mobile({
-		flexDirection: "column",
-	})}
+	margin-top: 15px;
 `;
 
-const Home = () => {
-	const [data, setData] = useState([]);
+export default function Home() {
+	const [posts, setPosts] = useState([]);
+
 	useEffect(() => {
-		const getData = async () => {
+		const getAllPosts = async () => {
 			try {
-				const res = await axios.get(`${baseURL}/users`);
-				setData(res.data);
+				const res = await axios.get(`${baseURL}/posts`);
+				setPosts(res.data);
 			} catch (error) {
 				console.log(error);
 			}
 		};
-		getData();
+		getAllPosts();
 	}, []);
 
 	return (
-		<Container>
-			{data.map((item) => (
-				<Status data={item} key={item._id} id={item._id} />
+		<Container className="home">
+			{posts.map((item) => (
+				<Post key={item._id} item={item} />
 			))}
 		</Container>
 	);
-};
-
-export default Home;
+}
