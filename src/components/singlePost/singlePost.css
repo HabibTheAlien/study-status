@@ -20,7 +20,7 @@
 .singlePostTitle {
 	text-align: center;
 	margin: 10px;
-	font-size: 28px;
+	font-size: 22px;
 }
 
 .singlePostEdit {
@@ -31,26 +31,28 @@
 
 .fa-edit {
 	color: purple;
-	margin-right: 40px;
+	margin-right: 30px;
 	cursor: pointer;
+	font-size: 20px;
 }
 
 .fa-trash-alt {
 	color: tomato;
 	cursor: pointer;
+	font-size: 20px;
 }
 
 .singlePostInfo {
 	margin-bottom: 20px;
 	display: flex;
 	justify-content: space-between;
-	font-size: 16px;
+	font-size: 14px;
 	color: #b39656;
 }
 
 .singlePostDesc {
 	color: #666;
-	font-size: 18px;
+	font-size: 17px;
 	line-height: 25px;
 	text-align: justify;
 	margin-bottom: 50px;
