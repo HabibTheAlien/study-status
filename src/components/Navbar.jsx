@@ -14,7 +14,7 @@ const Container = styled.div`
 	align-items: center;
 	color: #1d1d1d;
 	justify-content: space-between;
-	padding: 5px 20px;
+	padding: 5px 10px;
 	position: sticky;
 	top: 0;
 `;
@@ -35,7 +35,7 @@ const Center = styled.div`
 const Right = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 `;
 const Avtar = styled.img`
 	cursor: pointer;
@@ -53,7 +53,6 @@ const Items = styled.span`
 	padding: 5px 10px;
 	color: #1d1d1d;
 	font-size: 16px;
-	font-weight: 500;
 	${mobile({ padding: "5px" })}
 	&:hover {
 		color: blue;
