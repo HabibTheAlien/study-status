@@ -194,7 +194,7 @@ const Register = () => {
 				</Div>
 
 				<Btn type="submit" isLoading={isLoading} disabled={isLoading}>
-					Resister
+					Register
 				</Btn>
 			</Form>
 			<P>

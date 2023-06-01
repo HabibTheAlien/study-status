@@ -64,11 +64,11 @@ const Status = ({ data, id }) => {
 					{data.status ? (
 						<Text>
 							<Name>{data.username}&nbsp;</Name>
-							is now studing
+							is now studying
 						</Text>
 					) : (
 						<Text>
-							<Name>{data.username}&nbsp;</Name> is not studing
+							<Name>{data.username}&nbsp;</Name> is not studying
 						</Text>
 					)}
 				</Right>
