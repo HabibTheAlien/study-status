@@ -46,13 +46,13 @@
 	margin-bottom: 20px;
 	display: flex;
 	justify-content: space-between;
-	font-size: 14px;
+	font-size: 13px;
 	color: #b39656;
 }
 
 .singlePostDesc {
 	color: #666;
-	font-size: 17px;
+	font-size: 16px;
 	line-height: 25px;
 	text-align: justify;
 	margin-bottom: 50px;
@@ -60,6 +60,6 @@
 
 .singlePostDesc::first-letter {
 	margin-left: 20px;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: 600;
 }
