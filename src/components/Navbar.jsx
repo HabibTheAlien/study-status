@@ -23,8 +23,8 @@ const Left = styled.div`
 	cursor: pointer;
 `;
 const Logo = styled.h1`
-	font-size: 1.4rem;
-	color: #703be7;
+	font-size: 1.2rem;
+
 	/* // ${mobile({ fontSize: "rem" })} */
 `;
 const Center = styled.div`
