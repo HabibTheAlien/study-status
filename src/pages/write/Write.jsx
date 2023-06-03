@@ -44,6 +44,7 @@ export default function Write() {
 		setIsFetching(true);
 		const newPost = {
 			userId: user._id,
+			userPhoto: user.profilePic,
 			username: user.username,
 			title,
 			desc,
