@@ -9,7 +9,7 @@ export default function Write() {
 	const [title, setTitle] = useState("");
 	const [desc, setDesc] = useState("");
 	const [file, setFile] = useState(null);
-	const [picURL, setPicURL] = useState("");
+	const [picURL, setPicURL] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isFetching, setIsFetching] = useState(false);
 
