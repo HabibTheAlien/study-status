@@ -32,6 +32,7 @@ const Center = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+ font-size: 16px;
 `;
 const Right = styled.div`
 	display: flex;
