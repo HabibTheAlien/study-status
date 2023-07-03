@@ -32,7 +32,7 @@ const Center = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
- font-size: 14px;
+ 
 `;
 const Right = styled.div`
 	display: flex;
@@ -52,9 +52,9 @@ const Avtar = styled.img`
 `;
 const Items = styled.span`
 	cursor: pointer;
-	padding: 5px 10px;
+	padding: 5px 7px;
 	color: #1d1d1d;
-	font-size: 16px;
+	font-size: 15px;
 	${mobile({ padding: "5px" })}
 	&:hover {
 		color: blue;
