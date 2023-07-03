@@ -24,6 +24,7 @@ const Left = styled.div`
 `;
 const Logo = styled.h1`
 	font-size: 1.2rem;
+ color:#703be7;
 
 	/* // ${mobile({ fontSize: "rem" })} */
 `;
