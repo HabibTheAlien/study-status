@@ -10,7 +10,7 @@ export default function PostEdit() {
 	const location = useLocation();
 	const path = location.pathname.split("/")[2];
 	const [post, setPost] = useState({});
-	var [title, setTitle] = useState("");
+	var [title, setTitle] = useState(post.title);
 	var [desc, setDesc] = useState("");
 	const [file, setFile] = useState(null);
 	const [picURL, setPicURL] = useState("");
